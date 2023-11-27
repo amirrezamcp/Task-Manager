@@ -1,0 +1,21 @@
+{
+    "name": "amirreza/todolist",
+    "description": "A simple Todo List Project (with Ajax,Php and Mysql)",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Amirreza\\Todolist\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "bigpotato-yt",
+            "email": "138766025+bigpotato-yt@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "hekmatinasser/verta": "^8.3"
+    }
+}
