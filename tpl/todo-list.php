@@ -2,12 +2,12 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Task manager UI</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title> <?= SITE_TITEL ?></title>
+  <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css">
 
 </head>
 <body>
-<!-- partial:index.partial.html -->a
+<!-- partial:index.partial.html -->
 <div class="page">
   <div class="pageHeader">
     <div class="title">Dashboard</div>
@@ -71,7 +71,8 @@
   </div>
 </div>
 <!-- partial -->
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="<?= BASE_URL ?>assets/js/script.js"></script>
 
 </body>
 </html>
