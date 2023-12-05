@@ -1,8 +1,9 @@
 <?php
 include_once ("./bootstrap/init.php");
 
+$folders = getFolders();
 
-$tasks = getTask();
+$tasks = getFolders();
 
 include_once ("./tpl/todo-list.php");
 ?>

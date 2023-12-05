@@ -16,6 +16,16 @@ body {
   border: 1px solid #a4cca6 !important;
   color: #205217 !important;
 }
+input {
+  padding: 3px 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+.btn {
+  padding: 3px 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
 .page {
   position: absolute;
   width: 80%;
