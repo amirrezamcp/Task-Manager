@@ -25,9 +25,9 @@
         <ul>
           <?php foreach($folders as $folder): ?>
             <li> <i class="fa fa-folder"></i><?= $folder->name ?></li>
-          <?php endforeach; ?>
+            <?php endforeach; ?>
             <li class="active"><i class="fa fa-folder-open"></i> Current Folder</li>
-        </ul>
+          </ul>
       </div>
       <div>
           <input type="text" id="newFolderInput" style="width: 65%; margin-left: 3%" placeholder="Add New Folder"/>
