@@ -1,8 +1,8 @@
 <?php
 
 include_once("constants.php");
-include_once("libs/helpers.php");
-include_once("vendor/autoload.php");
+include_once(BASE_PATH ."libs/helpers.php");
+include_once(BASE_PATH ."vendor/autoload.php");
 
 // "mysql:host={$databases_config->host};dbname=$databases_config->db","$databases_config->user","$databases_config->pass"
 try {
@@ -16,6 +16,6 @@ try {
 }    
 
 
-include_once("libs/lib-auth.php");
-include_once("libs/lib-task.php");
-include_once("libs/lib-folder.php");
+include_once(BASE_PATH ."libs/lib-auth.php");
+include_once(BASE_PATH ."libs/lib-task.php");
+include_once(BASE_PATH ."libs/lib-folder.php");
