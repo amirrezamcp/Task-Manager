@@ -1,4 +1,4 @@
-<?php
+<?php defined('BASE_PATH') OR die("Permision Denied");
 # Authentication
 function getCurrentuserID() {
     return 1;

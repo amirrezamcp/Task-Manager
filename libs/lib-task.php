@@ -1,4 +1,4 @@
-<?php
+<?php defined('BASE_PATH') OR die("Permision Denied");
 function getTasks() {
     return 1 ;
 }

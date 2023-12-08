@@ -1,5 +1,4 @@
-<?php
-
+<?php defined('BASE_PATH') OR die("Permision Denied");
 function addFolders($Folder_name) {
     $Current_user_ID = getCurrentuserID();
     global $connection;

@@ -1,4 +1,4 @@
-<?php
+<?php  defined('BASE_PATH') OR die("Permision Denied");
 function isAjaxRequest() {
     if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' ) {
         return true;

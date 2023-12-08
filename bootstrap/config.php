@@ -1,4 +1,4 @@
-<?
+<?php
 
 $databases_config = (object) [
     'host' => 'localhost',
