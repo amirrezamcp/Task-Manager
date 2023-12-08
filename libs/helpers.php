@@ -13,4 +13,9 @@ function printRandomText($texts) {
     $randomText = array_rand($texts);
     echo $texts[$randomText];
 }
+function dd($var) {
+    echo "<pre style='color: #9c4100; background: #fff; z-index: 999; position: relative; padding: 10px; margin: 10px; border-radius: 5px; border-left: 3px solid;'>";-
+    var_dump($var);
+    echo "</pre>";
+}
 ?>

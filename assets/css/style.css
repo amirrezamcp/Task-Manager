@@ -49,6 +49,10 @@ i.remove {
 i.remove:hover {
   font-weight: 900;
 }
+span.created_at {
+  font-size: 11px;
+  margin-right: 12px;
+}
 .clickable:hover{
   cursor: pointer;
   opacity: 0.7;
