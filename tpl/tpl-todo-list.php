@@ -23,13 +23,13 @@
       <div class="menu">
         <div class="title">Folders</div>
         <ul class="folder-list">
+            <li class="<?= isset($_GET['folder_id']) ? '' : 'active' ?>"><i class=" fa  <?= (!isset($_GET['folder_id']))? 'fa-folder-open' : 'fa-folder' ?>"></i> All </li>
           <?php foreach($folders as $folder): ?>
-            <li>
-              <a href="?folder_id=<?= $folder->id ?>"><i class="fa fa-folder"></i><?= $folder->name ?></a>
+            <li class=" <?= (!empty($_GET['folder_id']) && $_GET['folder_id'] == $folder->id) ? 'active' : '' ?> ">
+              <a href="?folder_id=<?= $folder->id ?>"><i class="fa  <?= (isset($_GET['folder_id']) && $_GET['folder_id'] == $folder->id) ? 'fa-folder-open' : 'fa-folder' ?> "></i><?= $folder->name ?></a>
               <a href="?delete_folder=<?= $folder->id ?>"><i class="remove fa fa-trash-o" onclick="return confirm('Are you sure you want to delete this item?')"></i></a>
             </li>
             <?php endforeach; ?>
-            <li class="active"><i class="fa fa-folder-open"></i> Current Folder</li>
           </ul>
       </div>
       <div>
@@ -39,7 +39,7 @@
     </div>
     <div class="view">
       <div class="viewHeader">
-        <div class="title">Manage Tasks</div>
+        <input type="text" id="addTaskInput" style="width: 50%; margin-left: 3%; line-height: 30px;" placeholder="Add New Folder"/>
         <div class="functions">
           <div class="button active">Add New Task</div>
           <div class="button">Completed</div>
