@@ -39,7 +39,7 @@
     </div>
     <div class="view">
       <div class="viewHeader">
-        <input type="text" id="addTaskInput" style="width: 50%; margin-left: 3%; line-height: 30px;" placeholder="Add New Folder"/>
+        <input type="text" id="addTaskInput" style="width: 50%; margin-left: 3%; line-height: 30px; position: absolute;" placeholder="Add New Folder"/>
         <div class="functions">
           <div class="button active">Add New Task</div>
           <div class="button">Completed</div>
