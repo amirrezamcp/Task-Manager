@@ -14,8 +14,13 @@ function getTasks() {
     return $records;
 
 }
-function addTasks() {
-    return 1 ;
+function addTask($taskTitle, $folderId) {
+    $Current_user_ID = getCurrentuserID();
+    global $connection;
+    $sql = "INSERT INTO tasks (title, user_id, folder_id) VALUES (:title, :user_id, :folder_id)";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute([':title' => $taskTitle, ':user_id' => $Current_user_ID, ':folder_id' => $folderId]);
+    return $stmt->rowCount();
 }
 function deleteTask($task_id) {
     global $connection;

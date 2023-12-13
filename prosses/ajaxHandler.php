@@ -11,7 +11,6 @@ if(!isAjaxRequest()) {
 }
 if(!isset($_POST['action']) || empty($_POST['action'])){
     diepage("Invalid Action");
-
 }
 
 switch ($_POST['action']) {
@@ -20,11 +19,21 @@ switch ($_POST['action']) {
         printRandomText($textStrLen);
         die();
     }
-        echo addFolders($_POST['folderName']);
+        echo addFolder($_POST['folderName']);
     break;
 
     case "addTask";
-        // var_dump($_POST);
+    $folderId = $_POST['folderId'] ;
+    $taskTitle = $_POST['taskTitle'] ;
+        if(!isset($folderId) || empty($folderId)) {
+            echo "Select the desired file!";
+            die();
+        }
+        if(!isset($taskTitle) || strlen($taskTitle) <= 3) {
+            printRandomText($textStrLen);
+            die();
+        }
+        echo addTask($taskTitle, $folderId);
     break;
 
     default : 

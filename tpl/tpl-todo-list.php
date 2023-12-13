@@ -86,7 +86,25 @@
           }
         });
       });
-    });
+        // Add Tasks
+        $('#addTaskInput').on('keypress', function(e) {
+            if(e.which == 13) {
+              $.ajax({
+              url: "prosses/ajaxHandler.php",
+              method: "post",
+              data: {action : "addTask", folderId : <?= $_GET['folder_id'] ?? 0 ?>, taskTitle : $('#addTaskInput').val()},
+              success: function(response) {
+                if (response == '1'){
+                  location.reload();
+                }else {
+                  alert(response);
+                }
+              }
+            });
+          }
+        });
+        $('#addTaskInput').focus();
+      });
   </script>
 </body>
 </html>
