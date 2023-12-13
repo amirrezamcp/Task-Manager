@@ -23,11 +23,12 @@
       <div class="menu">
         <div class="title">Folders</div>
         <ul class="folder-list">
-            <li class="<?= isset($_GET['folder_id']) ? '' : 'active' ?>"><i class=" fa  <?= (!isset($_GET['folder_id']))? 'fa-folder-open' : 'fa-folder' ?>"></i> All </li>
+            <li class="<?= isset($_GET['folder_id']) ? '' : 'active' ?>">
+              <a href="<?= site_url() ?>"><i class=" fa  <?= (!isset($_GET['folder_id']))? 'fa-folder-open' : 'fa-folder' ?>"></i> All </li></a>
           <?php foreach($folders as $folder): ?>
             <li class=" <?= (!empty($_GET['folder_id']) && $_GET['folder_id'] == $folder->id) ? 'active' : '' ?> ">
-              <a href="?folder_id=<?= $folder->id ?>"><i class="fa  <?= (isset($_GET['folder_id']) && $_GET['folder_id'] == $folder->id) ? 'fa-folder-open' : 'fa-folder' ?> "></i><?= $folder->name ?></a>
-              <a href="?delete_folder=<?= $folder->id ?>"><i class="remove fa fa-trash-o" onclick="return confirm('Are you sure you want to delete this item?')"></i></a>
+              <a href="<?= site_url("?folder_id= $folder->id") ?>"><i class="fa  <?= (isset($_GET['folder_id']) && $_GET['folder_id'] == $folder->id) ? 'fa-folder-open' : 'fa-folder' ?> "></i><?= $folder->name ?></a>
+              <a href="<?= site_url("?delete_folder= $folder->id") ?>"><i class="remove fa fa-trash-o" onclick="return confirm('Are you sure you want to delete this item?')"></i></a>
             </li>
             <?php endforeach; ?>
           </ul>
