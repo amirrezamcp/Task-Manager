@@ -1,5 +1,5 @@
 <?php defined('BASE_PATH') OR die("Permision Denied");
-function addFolders($Folder_name) {
+function addFolder($Folder_name) {
     $Current_user_ID = getCurrentuserID();
     global $connection;
     $sql = "INSERT INTO folders (name, user_id) VALUES (:Folder_name, :user_id)";
