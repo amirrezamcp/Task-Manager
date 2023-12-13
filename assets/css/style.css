@@ -171,6 +171,7 @@ input {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   transition: 0.25s all;
+  color: #54b9cd;
 }
 .main .nav .menu ul li.active {
   text-decoration: none;
