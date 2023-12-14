@@ -7,7 +7,7 @@ function getTasks() {
         $folderCondition = "and folder_id = $folder";
     }
     $Current_user_ID = getCurrentuserID();
-    $sql = "SELECT * FROM tasks where user_id = $Current_user_ID $folderCondition";
+    $sql = "SELECT * FROM tasks WHERE user_id = $Current_user_ID $folderCondition";
     $stmt = $connection->prepare($sql);
     $stmt->execute();
     $records = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -29,5 +29,14 @@ function deleteTask($task_id) {
     $stmt->execute();
     return $stmt->rowCount();
 }
-
+function doneSwitch($task_id) {
+    // doneSwitch Substitution of values 
+    // 0 => 1 OR 1 => 0
+    $Current_user_ID = getCurrentuserID();
+    global $connection;
+    $sql = "UPDATE tasks SET is_done = 1 - is_done WHERE user_id = :userID AND id = :taskID";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute([':taskID' => $task_id, ':userID' => $Current_user_ID]);
+    return $stmt->rowCount();
+}
 ?>

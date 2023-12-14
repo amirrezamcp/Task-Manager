@@ -53,7 +53,7 @@
           <ul>
             <?php foreach($tasks as $task) : ?>
             <li class="<?= $task->is_done ? 'checked' : '' ?>">
-              <i class="fa <?= $task->is_done ? 'fa-check-square-o' : 'fa-square-o' ?>"></i>
+              <i data-taskId="<?= $task->id ?>" class="isDone clickable fa <?= $task->is_done ? 'fa-check-square-o' : 'fa-square-o' ?>"></i>
               <span><?= $task->title ?></span>
               <div class="info">
                 <span class='created-at'>Created At <?= $task->created_at ?></span>
@@ -72,6 +72,19 @@
   <script  src="<?= BASE_URL ?>assets/js/script.js"></script>
   <script>
     $(document).ready(function() {
+      // check is Done
+      $('.isDone').click(function(e) {
+        var isDoneTaskId = $(this).attr('data-taskId');
+        $.ajax({
+          url: "prosses/ajaxHandler.php",
+          method: "post",
+          data: {action : "doneSwitch", taskId : isDoneTaskId},
+          success: function(response) {
+            location.reload();
+          }
+        });
+      });
+      // Add Folder
       $('#addFolderBtn').click(function(e) {
         var inputFolder = $('input#addFolderInput');
         $.ajax({
