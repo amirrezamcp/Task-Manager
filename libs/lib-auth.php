@@ -3,7 +3,7 @@
 function getCurrentuserID() {
     return 1;
 }
-# Log
+# Login
 function getUserByEmail($email) {
     global $connection;
     $sql = "SELECT * FROM users WHERE email = :email";
@@ -13,13 +13,14 @@ function getUserByEmail($email) {
     return $records[0] ?? null;
 }
 function login($email, $passWord) {
-    # Check the Email
     $user = getUserByEmail($email);
     if(is_null($user)) {
         return false;
     }
     # Check the Password
     if(password_verify($passWord, $user->password)) {
+        $grav_url = "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->email ) ) );
+        $user->image = $grav_url;
         $_SESSION['login'] = $user;
         return true ;
     }
@@ -27,6 +28,13 @@ function login($email, $passWord) {
 }
 function isLoggedIn() {
     return isset($_SESSION['login']) ? true : false ;
+}
+function getLoggedInUser() {
+    return $_SESSION['login'] ?? null ;
+}
+# Logout
+function logout() {
+    unset($_SESSION['login']);
 }
 # Register
 function register($userData) {
