@@ -1,7 +1,8 @@
 <?php defined('BASE_PATH') OR die("Permision Denied");
 # Authentication
 function getCurrentuserID() {
-    return 1;
+    return getLoggedInUser()->id ?? 0;
+    
 }
 # Login
 function getUserByEmail($email) {
