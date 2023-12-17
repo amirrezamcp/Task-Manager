@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once("constants.php");
 include_once(BASE_PATH ."libs/helpers.php");
 include_once(BASE_PATH ."vendor/autoload.php");

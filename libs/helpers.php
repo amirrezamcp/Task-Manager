@@ -9,6 +9,9 @@ function diepage($msg){
     echo ( "<div style='padding: 30px; width: 88%; margin: 50px auto; background: #f9dede; border: 1px solid #cca4a4; color: #521717; font-family: sans-serif; border-radius: 5px;' >$msg</div>");
     die();
 }
+function message($msg, $cssClass = 'info'){
+    echo ( "<div class='$cssClass' style='padding: 20px; width: 88%; margin: 10px auto; background: #f9dede; border: 1px solid #cca4a4; color: #521717; font-family: sans-serif; border-radius: 5px;' >$msg</div>");
+}
 function printRandomText($texts) {
     $randomText = array_rand($texts);
     echo $texts[$randomText];

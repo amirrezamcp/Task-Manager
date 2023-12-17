@@ -1,6 +1,10 @@
 <?php
 include_once ("./bootstrap/init.php");
-
+# authentication
+if(!isLoggedIn()) {
+   // redirect to aut from
+   header("Location: " . site_url('auth.php'));
+}
 # Removal and validation process
 if (isset($_GET['delete_folder']) && is_numeric($_GET['delete_folder'])) {
    $deleteedCount = deleteFolder($_GET['delete_folder']);

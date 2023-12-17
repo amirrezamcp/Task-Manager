@@ -2,8 +2,8 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - login-signup</title>
-  <link rel="stylesheet" href="./style.css">
+  <title> <?= Auth_TITEL ?> </title>
+  <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/auth.css">
 
 </head>
 <body>
@@ -13,17 +13,18 @@
 		<div class="panel">
 			<div class="auth-form on" id="login">
 				<div id="form-title">Log In</div>
-				<form action="/login" method="POST">
-					<input name="Username" type="text" required="required" placeholder="username"/>
-					<input name="Password" type="password" required="required" placeholder="password"/>
-					<button type="Submit">Log In</button>
+				<form action="<?= site_url('auth.php?action=login') ?>" method="POST">
+					<input name="email" type="text" required="required" placeholder="Email"/>
+					<input name="password" type="password" required="required" placeholder="Password"/>
+					<button type="ubmit">Log In</button>
 				</form>
 			</div>
 			<div class="auth-form" id="signup" >
 				<div id="form-title">Register</div>
-				<form action="/login" method="POST">
-					<input name="Username" type="text" required="required" placeholder="username"/>
-					<input name="Password" type="password" required="required" placeholder="password"/>
+				<form action="<?= site_url('auth.php?action=register') ?>" method="POST">
+					<input name="name" type="text" required="required" placeholder="Username"/>
+					<input name="password" type="password" required="required" placeholder="Password"/>
+					<input name="email" type="text" required="required" placeholder="Email"/>
 					<button type="Submit">Sign Up</button>
 				</form>
 			</div>
@@ -36,7 +37,7 @@
 	</div>
 </div>
 <!-- partial -->
-  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script><script  src="./script.js"></script>
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script><script  src="<?= BASE_URL ?>assets/js/auth.js"></script>
 
 </body>
 </html>
